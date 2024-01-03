@@ -1,0 +1,56 @@
+FOLDERS :
+
+back-end
+	-> Node Modules (npm init)
+	-> dependencies (npm i express mysql body-parser nodemon cors)
+	-> create a root file (index.js/app.js)
+	-> body-parser (when data is not stored in database)
+		- 
+front-end
+	-> download react template (npx create-react-app ./[foldername])
+	-> dependencies (npm i react-router-dom axios)
+	-> clean the workspace (delete everything except [public->index.html], [src->App.js,index.js] (delete extra code)
+	-> tip: use comman css (styles.css import in App.js) 
+
+
+------------ BACK-END CODE ----------------
+
+-> IN index.js 
+1) import express --> app = express();
+app.listen(8080, ()=>{
+    console.log("Server started on port 8080 ...");
+})
+
+2) CRUD operations // Either do it in [Router->routes.js]
+--> define route handlers
+app.use("/",routes);
+	-> fetch data: app.get('/url', (req, res) => {/* create query db.query(query, (err, data) =>{/* handle err */}}) 
+	-> insert data: app.post('/url') { values = [ req.Body.name, req.Body.name2, ..] run db.query(use ? for values in sequence)}
+	-> update data: app.put('/url/:id') { values + id --> req.params.id }
+	-> delete data: app.delete('/url/:id') { id }
+
+3) Write a Express middleware
+app.use(express.json());
+app.use(cors());
+
+// HOW TO START BACK-END SERVER
+nodemon index.js
+
+
+------------ FRONT-END CODE ----------------
+
+-> Under Src folder
+1) Components 
+	-> Default (rafc) Header and Footer OR NavBar
+	-> 
+
+2) Pages
+	->
+	->
+
+3) App.js
+	-> import all pages set routes (using BrowserRouter Routes Route) 
+	-> 
+
+4) index.js
+	-> import header footer app (it is for setting layout of componets)
