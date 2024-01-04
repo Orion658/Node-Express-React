@@ -38,7 +38,7 @@ const AddProduct = ({ addProduct }) => {
         <input type="number" name="price" value={product.price} onChange={handleInputChange} required />
 
         <label>Expiry Date:</label>
-        <input type="text" name="expiryDate" value={product.expiryDate} onChange={handleInputChange} required />
+        <input type="date" name="expiryDate" value={product.expiryDate} onChange={handleInputChange} required />
 
         <button type="button" onClick={handleAddProduct}>
           Add Product
