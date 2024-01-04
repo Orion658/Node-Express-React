@@ -15,7 +15,7 @@ $(document).ready(function () {
           <td>${employeeName}</td>
           <td>${dob}</td>
           <td>${gender}</td>
-          <td>${languages.join(',')}</td>
+          <td>${languages.join(', ')}</td>
         </tr>`;
   
         $('#employeeDetailsBody').append(row);
