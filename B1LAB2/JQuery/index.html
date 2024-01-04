@@ -11,22 +11,30 @@
 
   <h2>Employee App</h2>
 
-  <label for="employeeName">Employee Name:</label>
-  <input type="text" id="employeeName" />
-
-  <label for="dob">Date of Birth:</label>
-  <input type="date" id="dob" />
-
-  <label>Gender:</label>
-  <input type="radio" name="gender" value="male" /> Male
-  <input type="radio" name="gender" value="female" /> Female
-
-  <label>Languages:</label>
-  <input type="checkbox" name="language" value="hindi" /> Hindi
-  <input type="checkbox" name="language" value="english" /> English
-  <input type="checkbox" name="language" value="marathi" /> Marathi
-
-  <button id="showDetails">Show Employee Details</button>
+  <div class="employeeForm">
+    <label for="employeeName">Employee Name:</label>
+    <input type="text" id="employeeName" /><br/>
+  
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" /><br/>
+  
+    <div class="labelDiv">
+      <label>Gender:</label>
+      <input type="radio" name="gender" value="male" /> Male
+      <input type="radio" name="gender" value="female" /> Female
+      <br/>
+    </div>
+    
+    <div class="labelDiv">
+      <label>Languages:</label>
+      <input type="checkbox" name="language" value="hindi" /> Hindi
+      <input type="checkbox" name="language" value="english" /> English
+      <input type="checkbox" name="language" value="marathi" /> Marathi
+      <br/>
+    </div>
+    
+    <button id="showDetails">Show Employee Details</button>
+  </div>
 
   <table id="employeeTable">
     <thead>
