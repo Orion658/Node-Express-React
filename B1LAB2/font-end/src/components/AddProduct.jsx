@@ -1,7 +1,8 @@
-// AddProduct.js
 import React, { useState } from 'react';
 
 const AddProduct = ({ addProduct }) => {
+  const [productIdCounter, setProductIdCounter] = useState(1);
+
   const [product, setProduct] = useState({
     productId: '',
     productName: '',
@@ -15,7 +16,12 @@ const AddProduct = ({ addProduct }) => {
   };
 
   const handleAddProduct = () => {
-    addProduct(product);
+    const newProduct = { ...product, productId: productIdCounter.toString() };
+    addProduct(newProduct);
+
+    // Increment the product ID counter for the next product
+    setProductIdCounter(productIdCounter + 1);
+
     setProduct({
       productId: '',
       productName: '',
@@ -28,8 +34,9 @@ const AddProduct = ({ addProduct }) => {
     <div>
       <h2>Add Product</h2>
       <form>
+        {/* The Product Id input is now disabled and auto-populated */}
         <label>Product Id:</label>
-        <input type="text" name="productId" value={product.productId} onChange={handleInputChange} required />
+        <input type="text" name="productId" value={productIdCounter} disabled />
 
         <label>Product Name:</label>
         <input type="text" name="productName" value={product.productName} onChange={handleInputChange} required />
