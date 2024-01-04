@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button and Div</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    button {
+      padding: 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #hiddenDiv {
+      display: none;
+      position: absolute;
+      width: 150px;
+      left: 100px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <button id="showDivButton">Show Div</button>
+    <div id="hiddenDiv">This is a hidden div.</div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#showDivButton').click(function() {
+        $('#hiddenDiv').toggle();
+      });
+
+      $('#hiddenDiv').mouseover(function() {
+        $(this).css({ top: $('#showDivButton').position().top + $('#showDivButton').outerHeight() + 'px', left: '0px' });
+      });
+
+      $('#hiddenDiv').mouseout(function() {
+        $(this).css({ top: '0', left: '100px'});
+      });
+    });
+  </script>
+
+</body>
+</html>
